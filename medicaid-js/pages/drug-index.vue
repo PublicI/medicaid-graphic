@@ -22,8 +22,8 @@ export default {
         makeSeries(mydata) {
             const tar = [];
             let seriesI = {};
-            seriesI.name = "National Average";
-            seriesI.data = mydata.data[2];
+            seriesI.name = "Total Spending";
+            seriesI.data = mydata.data[1];
             seriesI.pointStart = Date.UTC(2006,0,1); 
             seriesI.pointIntervalUnit = 'year'
             seriesI.marker = { symbol: 'circle', radius: 3 };
@@ -66,7 +66,7 @@ export default {
             },
             yAxis: {
                 title: {
-                    text: 'Medicaid drug spending (Billions, USD)'
+                    text: 'Medicaid drug spending (Trillions, USD)'
                 },
                 labels: {
                     formatter() {
@@ -82,7 +82,7 @@ export default {
                 ]
             },
             tooltip: {
-                pointFormat: '{series.name}:<b>${point.y:.1f} billion</b>',
+                pointFormat: '{series.name}:<b>${point.y:.1f} trillion</b>',
                 crosshairs: true
             },
             legend: {
@@ -93,7 +93,7 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>State drug spending under Medicaid is increasing</b>'
+                text: '<b>Drug spending under Medicaid is increasing</b>'
             },
             style: {
                 fontFamily: 'tablet-gothic-narrow'
