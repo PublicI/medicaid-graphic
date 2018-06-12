@@ -51,7 +51,12 @@ export default {
             subtitle: {
                 display: 'null',
                 text: ' ',
-                x: -20
+                x: -20,
+                labels: {
+                    style: {
+                        fontSize: '14px'
+                    }
+                }
             },
             credits: {
                 enabled: false
@@ -59,18 +64,21 @@ export default {
             xAxis: {
                 labels: {
                     style: {
-                        fontSize: '10px'
+                        fontSize: '11px'
                     }
                 },
                 type: 'datetime'
             },
             yAxis: {
                 title: {
-                    text: 'Percentage of state spending towards Medicaid'
+                    text: 'Percentage of state and federal spending towards Medicaid'
                 },
                 labels: {
                     formatter() {
                         return `${Highcharts.numberFormat(this.value, 0)}%`;
+                    },
+                    style: {
+                        fontSize: '11px'
                     }
                 },
                 plotLines: [
@@ -93,7 +101,13 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>State Medicaid spending is on the rise</b>'
+                text: '<b>Medicaid spending is on the rise</b>'
+            },
+            subtitle: {
+                text: 'Since 2008, the percentage of total state and federal spending going towards Medicaid has steadily increased.',
+                style: {
+                    fontSize: '15px'
+                }
             },
             style: {
                 fontFamily: 'tablet-gothic-narrow'
