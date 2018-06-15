@@ -24,7 +24,7 @@ export default {
             let seriesI = {};
             seriesI.name = "Total Spending";
             seriesI.data = mydata.data[1];
-            seriesI.pointStart = Date.UTC(2006,0,1); 
+            seriesI.pointStart = Date.UTC(2008,0,1); 
             seriesI.pointIntervalUnit = 'year'
             seriesI.marker = { symbol: 'circle', radius: 3 };
             tar.push(seriesI);
@@ -42,7 +42,7 @@ export default {
             }
         });
         Highcharts.chart('chart', {
-            colors: ['#6699ff'],
+            colors: ['#51AADE'],
             title: {
                 display: 'null',
                 text: ' ',
@@ -57,6 +57,31 @@ export default {
                 enabled: false
             },
             xAxis: {
+
+                plotLines: [
+                    {
+                        value: Date.UTC(2010),
+                        width: 1.5,
+                        color: '#bebebe',
+                        label: {
+                            text: 'ACA passed',
+                            style: {
+                                color: '#737373'
+                            }
+                        }
+                    },
+                    {
+                        value: Date.UTC(2014),
+                        width: 1.5,
+                        color: '#bebebe',
+                        label: {
+                            text: 'Medicaid expansion',
+                            style: {
+                                color: '#737373'
+                            }
+                        }                        
+                    }                    
+                ],
                 labels: {
                     style: {
                         fontSize: '10px'
@@ -93,7 +118,15 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>Drug spending under Medicaid is increasing</b>'
+                text: '<b>Drug spending is increasing, too</b>',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Under Medicaid, state and federal drug spending increased by $14 trillion from 2008 to 2016.',
+                align: 'left',
+                style: {
+                    fontSize: '15px'
+                }
             },
             style: {
                 fontFamily: 'tablet-gothic-narrow'

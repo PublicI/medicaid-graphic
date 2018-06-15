@@ -24,7 +24,7 @@ export default {
             let seriesI = {};
             seriesI.name = "National Average";
             seriesI.data = mydata.data[0];
-            seriesI.pointStart = Date.UTC(2006,0,1); 
+            seriesI.pointStart = Date.UTC(2008,0,1); 
             seriesI.pointIntervalUnit = 'year'
             seriesI.marker = { symbol: 'circle', radius: 3 };
             tar.push(seriesI);
@@ -42,7 +42,7 @@ export default {
             }
         });
         Highcharts.chart('chart', {
-            colors: ['#6699ff'],
+            colors: ['#51AADE'],
             title: {
                 display: 'null',
                 text: ' ',
@@ -62,6 +62,30 @@ export default {
                 enabled: false
             },
             xAxis: {
+                plotLines: [
+                    {
+                        value: Date.UTC(2010),
+                        width: 1.5,
+                        color: '#bebebe',
+                        label: {
+                            text: 'ACA passed',
+                            style: {
+                                color: '#737373'
+                            }
+                        }
+                    },
+                    {
+                        value: Date.UTC(2014),
+                        width: 1.5,
+                        color: '#bebebe',
+                        label: {
+                            text: 'Medicaid expansion',
+                            style: {
+                                color: '#737373'
+                            }
+                        }                        
+                    }                    
+                ],
                 labels: {
                     style: {
                         fontSize: '11px'
@@ -101,10 +125,12 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>Medicaid spending is on the rise</b>'
+                text: '<b>Medicaid spending is on the rise</b>',
+                align: 'left'
             },
             subtitle: {
                 text: 'Since 2008, the percentage of total state and federal spending going towards Medicaid has steadily increased.',
+                align: 'left',
                 style: {
                     fontSize: '15px'
                 }
