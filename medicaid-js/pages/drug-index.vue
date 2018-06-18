@@ -60,17 +60,6 @@ export default {
 
                 plotLines: [
                     {
-                        value: Date.UTC(2010),
-                        width: 1.5,
-                        color: '#bebebe',
-                        label: {
-                            text: 'ACA passed',
-                            style: {
-                                color: '#737373'
-                            }
-                        }
-                    },
-                    {
                         value: Date.UTC(2014),
                         width: 1.5,
                         color: '#bebebe',
@@ -118,7 +107,7 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>... which means Drug Payouts are Increasing, too</b>',
+                text: '<b>... which means drug payouts are increasing, too</b>',
                 align: 'left'
             },
             subtitle: {

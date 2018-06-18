@@ -3,7 +3,7 @@
 
         <p class="title">How pharmaceutical companies influence Medicaid drug access</p>
 
-        <p class="subtitle">Nearly 300 doctors sitting on state drug utilization boards from 2016-18 received payments from pharmaceutical companies </p>
+        <p class="subtitle">Nearly 300 doctors who decided which drugs were covered by state Medicaid programs from 2016-18 had received payments from Pharmaceutical companies</p>
 
         <svg style="width:100%;height:60px">
             <g class="legendLog" transform="translate(7,0)">
@@ -253,7 +253,7 @@ export default {
     font-family: tablet-gothic-narrow,
         sans-serif;
     font-size: 20px;
-    line-height: 22px;
+    line-height: 24px;
     width: 300px;
     word-wrap: break-word;
     padding-bottom: 0px;

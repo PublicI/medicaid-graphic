@@ -64,17 +64,6 @@ export default {
             xAxis: {
                 plotLines: [
                     {
-                        value: Date.UTC(2010),
-                        width: 1.5,
-                        color: '#bebebe',
-                        label: {
-                            text: 'ACA passed',
-                            style: {
-                                color: '#737373'
-                            }
-                        }
-                    },
-                    {
                         value: Date.UTC(2014),
                         width: 1.5,
                         color: '#bebebe',
@@ -125,7 +114,7 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>Medicaid Spending is on the Rise...</b>',
+                text: '<b>Medicaid spending is on the rise...</b>',
                 align: 'left'
             },
             subtitle: {
