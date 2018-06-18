@@ -95,7 +95,7 @@ export default {
             },
             yAxis: {
                 title: {
-                    text: 'Percentage of state and federal spending towards Medicaid'
+                    text: ''
                 },
                 labels: {
                     formatter() {
@@ -125,11 +125,11 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>Medicaid spending is on the rise</b>',
+                text: '<b>Medicaid Spending is on the Rise...</b>',
                 align: 'left'
             },
             subtitle: {
-                text: 'Since 2008, the percentage of total state and federal spending going towards Medicaid has steadily increased.',
+                text: 'Percentage of total state and federal spending that went towards Medicaid',
                 align: 'left',
                 style: {
                     fontSize: '15px'

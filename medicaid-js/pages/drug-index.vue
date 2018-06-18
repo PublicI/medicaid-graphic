@@ -91,11 +91,11 @@ export default {
             },
             yAxis: {
                 title: {
-                    text: 'Medicaid drug spending (Trillions, USD)'
+                    text: ''
                 },
                 labels: {
                     formatter() {
-                        return `$${Highcharts.numberFormat(this.value, 0)}`;
+                        return `$${Highcharts.numberFormat(this.value, 0)}T`;
                     }
                 },
                 plotLines: [
@@ -118,11 +118,11 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>Drug spending is increasing, too</b>',
+                text: '<b>... which means Drug Payouts are Increasing, too</b>',
                 align: 'left'
             },
             subtitle: {
-                text: 'Under Medicaid, state and federal drug spending increased by $14 trillion from 2008 to 2016.',
+                text: 'State and federal Medicaid drug spending in trillions of dollars',
                 align: 'left',
                 style: {
                     fontSize: '15px'
