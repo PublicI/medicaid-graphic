@@ -18,8 +18,8 @@ export default {
             const tar = [];
             for (let i = 0; i < mydata.index.length; i++) {
                 let seriesI = {};
-                seriesI.name = mydata.index[0];
-                seriesI.data = mydata.data[0];
+                seriesI.name = mydata.index[i];
+                seriesI.data = mydata.data[i];
                 tar.push(seriesI);
             }
             return tar;
