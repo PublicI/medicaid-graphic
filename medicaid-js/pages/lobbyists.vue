@@ -15,21 +15,23 @@ export default {
     methods: {
         makeSeries(mydata) {
             const tar = [];
-            let seriesI = {};
-            seriesI.data = mydata.data;
-            tar.push(seriesI);
+            let series = {};
+            series.data = mydata.data;
+            tar.push(series);
             return series;
         }
     },
     mounted() {
+        let states = data.states;
         let dSeries = this.makeSeries(data);
         console.log(dSeries);
+        console.log(states);
         Highcharts.chart('chart', {
             chart: {
                 type: 'bar'
             },
             xAxis: {
-                categories: dSeries.state,
+                categories: states,
                 title: {
                     text: null
                 }
