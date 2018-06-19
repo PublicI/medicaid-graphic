@@ -12,33 +12,30 @@ import data from '~/assets/lobbyist-ratios.json';
 import Highcharts from 'highcharts';
 import postal from 'journalize';
 export default {
-
     methods: {
         makeSeries(mydata) {
             const tar = [];
-            for (let i = 0; i < mydata.index.length; i++) {
-                let seriesI = {};
-                seriesI.name = mydata.index[i];
-                seriesI.data = mydata.data[i];
-                tar.push(seriesI);
-            }
-            return tar;
+            let seriesI = {};
+            seriesI.data = mydata.data;
+            tar.push(seriesI);
+            return series;
         }
     },
-
     mounted() {
+        let dSeries = this.makeSeries(data);
+        console.log(dSeries);
         Highcharts.chart('chart', {
             chart: {
                 type: 'bar'
             },
             xAxis: {
-                categories: data.states,
+                categories: dSeries.state,
                 title: {
                     text: null
                 }
             },
             yAxis: {
-                data: data.index[1],
+                data: dSeries.ratio,
                 min: 0,
                 title: {
                     text: null
@@ -47,8 +44,8 @@ export default {
             legend: {
                 enabled: false
             },
-            series: this.makeSeries(data)
         });
+
     }
 };
 
