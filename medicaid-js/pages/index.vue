@@ -143,5 +143,6 @@ export default {
     line-height:120%;
     font-size:80%;
     color:#666;
+    
 }
 </style>

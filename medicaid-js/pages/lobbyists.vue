@@ -31,19 +31,17 @@ export default {
                     fontFamily: 'tablet-gothic-narrow'
                 }
             },
-            colors: ['#17807E'],
             xAxis: {
                 categories: data.states,
                 tickLength: 0,
-                margin: 0,
                 align: 'right',
                 title: {
                     text: null
                 },
                 labels: {
                     style: {
-                        fontSize: '10px',
-                        color: '#4c4c4c',
+                        fontSize: '11px',
+                        color: '#383838',
                     }
                 }
             },
@@ -51,12 +49,53 @@ export default {
                 min: 0,
                 max: 3,
                 gridLineWidth: 0,
-                labels: {
-                    enabled: false
-                },
                 title: {
                     text: null
-                }
+                },
+                labels: {
+                    enabled: false,
+                },
+                plotLines: [
+                    {
+                        value: 1,
+                        width: 1.5,
+                        color: '#bebebe',
+                        label: {
+                            y: 110,
+                            text: '1 lobbyist per legislator',
+                            style: {
+                                color: '#737373',
+                                fontSize: '13px'
+                            }
+                        }                        
+                    },
+                    {
+                        value: 2,
+                        width: 1.5,
+                        color: '#bebebe',
+                        label: {
+                            y: 60,
+                            text: '2 lobbyists per legislator',
+                            style: {
+                                color: '#737373',
+                                fontSize: '13px'
+                            }
+                        }                        
+                    } /*,
+                    {
+                        value: 3,
+                        width: 1.5,
+                        color: '#bebebe',
+                        label: {
+                            align: 'left',
+                            text: '3 lobbyists per legislator',
+                            style: {
+                                color: '#737373',
+                                fontSize: '13px'
+                            }
+                        }                        
+                    }   */                
+                ]
             },
             legend: {
                 enabled: false
@@ -70,8 +109,10 @@ export default {
             title: {
                 text: '<b>Registered pharma lobbyists per state legislator</b>',
                 align: 'left',
-                fontSize: '20px',
-                x: 90
+                style: {
+                    fontSize: '20px'
+                },
+                x: 100
             },
             style: {
                 fontFamily: 'tablet-gothic-narrow'
@@ -79,7 +120,8 @@ export default {
             plotOptions: {
                 series: {
                     pointWidth: 10,
-                    pointPadding: 20
+                    pointPadding: 20,
+                    color: '#17807E'
                 }
             },
             series: this.makeSeries(data)
