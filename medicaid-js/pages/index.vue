@@ -26,7 +26,7 @@ export default {
             seriesI.data = mydata.data[0];
             seriesI.pointStart = Date.UTC(2008,0,1); 
             seriesI.pointIntervalUnit = 'year'
-            seriesI.marker = { symbol: 'circle', radius: 3 };
+            seriesI.marker = { symbol: 'circle', radius: 2 };
             tar.push(seriesI);
             return tar;
         }
@@ -62,6 +62,7 @@ export default {
                 enabled: false
             },
             xAxis: {
+                gridLineWidth: .5,
                 plotLines: [
                     {
                         value: Date.UTC(2014),
@@ -69,6 +70,7 @@ export default {
                         color: '#bebebe',
                         label: {
                             text: 'Medicaid expansion',
+                            y: 100,
                             style: {
                                 color: '#737373'
                             }
@@ -96,18 +98,17 @@ export default {
                 },
                 plotLines: [
                     {
-                        value: 2,
-                        width: 1.5,
+                        width: .5,
                         color: '#bebebe'
                     }
                 ]
             },
             tooltip: {
                 pointFormat: '{series.name}:<b>{point.y:.1f}%</b>',
-                crosshairs: true
+                crosshairs: false
             },
             legend: {
-                enabled: true,
+                enabled: false,
                 align: 'right',
                 verticalAlign: 'bottom',
                 borderWidth: 0
@@ -143,6 +144,5 @@ export default {
     line-height:120%;
     font-size:80%;
     color:#666;
-    
 }
 </style>
