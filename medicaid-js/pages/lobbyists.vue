@@ -2,7 +2,7 @@
     <div>
         <div id="chart"></div>
         
-        <p class="source">Source: NEED SOURCE. Graphic by Julia Donheiser.</p>
+        <p class="source">Source: The National Institute on Money in Politics and the National Conference of State Legislatures. Graphic by Julia Donheiser.</p>
     </div>
 </template>
 
@@ -12,33 +12,48 @@ import data from '~/assets/lobbyist-ratios.json';
 import Highcharts from 'highcharts';
 import postal from 'journalize';
 export default {
+
     methods: {
         makeSeries(mydata) {
             const tar = [];
             let series = {};
+            series.name = 'ratios';
             series.data = mydata.data;
             tar.push(series);
-            return series;
+            return tar;
         }
     },
     mounted() {
-        let states = data.states;
-        let dSeries = this.makeSeries(data);
-        console.log(dSeries);
-        console.log(states);
         Highcharts.chart('chart', {
             chart: {
-                type: 'bar'
+                type: 'bar',
+                style: {
+                    fontFamily: 'tablet-gothic-narrow'
+                }
             },
+            colors: ['#17807E'],
             xAxis: {
-                categories: states,
+                categories: data.states,
+                tickLength: 0,
+                margin: 0,
+                align: 'right',
                 title: {
                     text: null
+                },
+                labels: {
+                    style: {
+                        fontSize: '10px',
+                        color: '#4c4c4c',
+                    }
                 }
             },
             yAxis: {
-                data: dSeries.ratio,
                 min: 0,
+                max: 3,
+                gridLineWidth: 0,
+                labels: {
+                    enabled: false
+                },
                 title: {
                     text: null
                 }
@@ -46,18 +61,44 @@ export default {
             legend: {
                 enabled: false
             },
+            tooltip: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: '<b>Registered pharma lobbyists per state legislator</b>',
+                align: 'left',
+                fontSize: '20px',
+                x: 90
+            },
+            style: {
+                fontFamily: 'tablet-gothic-narrow'
+            },
+            plotOptions: {
+                series: {
+                    pointWidth: 10,
+                    pointPadding: 20
+                }
+            },
+            series: this.makeSeries(data)
         });
 
     }
 };
 
+
 </script>
 
 <style scoped>
 #chart {
-    height: 1000px;
+    height: 900px;
     margin: 0 auto;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+}
+.title {
+
 }
 .source {
     line-height:120%;
