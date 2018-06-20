@@ -23,7 +23,7 @@ export default {
             return tar;
         },
         apStyle(state) {
-            return apstate(state);
+            return apstate(postal(state, true));
         }
     },
     mounted() {
