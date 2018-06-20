@@ -10,7 +10,7 @@
 /* eslint-disable */
 import data from '~/assets/lobbyist-ratios.json';
 import Highcharts from 'highcharts';
-import postal from 'journalize';
+import {postal, apstate} from 'journalize';
 export default {
 
     methods: {
@@ -21,18 +21,22 @@ export default {
             series.data = mydata.data;
             tar.push(series);
             return tar;
+        },
+        apStyle(state) {
+            return apstate(state);
         }
     },
     mounted() {
         Highcharts.chart('chart', {
             chart: {
                 type: 'bar',
+                paddingLeft: -10,
                 style: {
                     fontFamily: 'tablet-gothic-narrow'
                 }
             },
             xAxis: {
-                categories: data.states,
+                categories: data.states.map(this.apStyle),
                 tickLength: 0,
                 align: 'right',
                 title: {
@@ -65,7 +69,7 @@ export default {
                             text: '1 lobbyist per legislator',
                             style: {
                                 color: '#737373',
-                                fontSize: '13px'
+                                fontSize: '14px'
                             }
                         }                        
                     },
@@ -78,7 +82,7 @@ export default {
                             text: '2 lobbyists per legislator',
                             style: {
                                 color: '#737373',
-                                fontSize: '13px'
+                                fontSize: '14px'
                             }
                         }                        
                     } /*,
@@ -127,6 +131,16 @@ export default {
             series: this.makeSeries(data)
         });
 
+    },
+    computed: {
+        stateNames() {
+            let ret = [];
+            this.data.forEach(function(d) {
+                let temp = postal(d.states);
+                ret.push(temp);
+            });
+            return ret;
+        }
     }
 };
 
