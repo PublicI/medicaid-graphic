@@ -115,8 +115,7 @@ export default {
                 align: 'left',
                 style: {
                     fontSize: '20px'
-                },
-                x: 100
+                }
             },
             style: {
                 fontFamily: 'tablet-gothic-narrow'
@@ -149,7 +148,7 @@ export default {
 
 <style scoped>
 #chart {
-    height: 900px;
+    height: 800px;
     margin: 0 auto;
     padding-bottom: 15px;
 }
