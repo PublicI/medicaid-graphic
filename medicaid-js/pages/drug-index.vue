@@ -43,16 +43,6 @@ export default {
         });
         Highcharts.chart('chart', {
             colors: ['#51AADE'],
-            title: {
-                display: 'null',
-                text: ' ',
-                x: -20 // center
-            },
-            subtitle: {
-                display: 'null',
-                text: ' ',
-                x: -20
-            },
             credits: {
                 enabled: false
             },
@@ -63,10 +53,12 @@ export default {
                         value: Date.UTC(2014),
                         width: 1.5,
                         color: '#bebebe',
+                        zIndex: 3,
                         label: {
                             text: 'Medicaid expansion',
                             y: 110,
                             style: {
+                                fontSize: '13px',
                                 color: '#737373'
                             }
                         }                        
@@ -74,7 +66,7 @@ export default {
                 ],
                 labels: {
                     style: {
-                        fontSize: '10px'
+                        fontSize: '11px'
                     }
                 },
                 type: 'datetime'
@@ -108,11 +100,13 @@ export default {
             series: dSeries,
             title: {
                 text: '<b>... which means drug payouts are increasing, too</b>',
-                align: 'left'
+                align: 'left',
+                x: 50
             },
             subtitle: {
-                text: 'State and federal Medicaid drug spending in trillions of dollars',
+                text: 'Total state and federal Medicaid drug spending in trillions of dollars',
                 align: 'left',
+                x: 50,
                 style: {
                     fontSize: '15px'
                 }

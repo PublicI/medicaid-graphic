@@ -43,21 +43,6 @@ export default {
         });
         Highcharts.chart('chart', {
             colors: ['#51AADE'],
-            title: {
-                display: 'null',
-                text: ' ',
-                x: -20 // center
-            },
-            subtitle: {
-                display: 'null',
-                text: ' ',
-                x: -20,
-                labels: {
-                    style: {
-                        fontSize: '14px'
-                    }
-                }
-            },
             credits: {
                 enabled: false
             },
@@ -68,11 +53,13 @@ export default {
                         value: Date.UTC(2014),
                         width: 1.5,
                         color: '#bebebe',
+                        zIndex: 3,
                         label: {
                             text: 'Medicaid expansion',
                             y: 100,
                             style: {
-                                color: '#737373'
+                                color: '#737373',
+                                fontSize: '13px'
                             }
                         }                        
                     }                    
@@ -116,11 +103,13 @@ export default {
             series: dSeries,
             title: {
                 text: '<b>Medicaid spending is on the rise...</b>',
-                align: 'left'
+                align: 'left',
+                x: 50
             },
             subtitle: {
                 text: 'Percentage of total state and federal spending that went towards Medicaid',
                 align: 'left',
+                x: 50,
                 style: {
                     fontSize: '15px'
                 }
