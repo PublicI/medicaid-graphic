@@ -48,6 +48,8 @@ export default {
             },
             xAxis: {
                 gridLineWidth: .5,
+                endOnTick: true,
+                max: Date.UTC(2016,0,1),
                 plotLines: [
                     {
                         value: Date.UTC(2014),
@@ -101,6 +103,7 @@ export default {
             title: {
                 text: '<b>... which means drug payouts are increasing, too</b>',
                 align: 'left',
+                margin: 20,
                 x: 50
             },
             subtitle: {

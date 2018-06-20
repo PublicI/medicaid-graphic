@@ -48,6 +48,8 @@ export default {
             },
             xAxis: {
                 gridLineWidth: .5,
+                max: Date.UTC(2017,0,1),
+                endOnTick: true,
                 plotLines: [
                     {
                         value: Date.UTC(2014),
@@ -104,7 +106,8 @@ export default {
             title: {
                 text: '<b>Medicaid spending is on the rise...</b>',
                 align: 'left',
-                x: 50
+                x: 50,
+                margin: 20
             },
             subtitle: {
                 text: 'Percentage of total state and federal spending that went towards Medicaid',
