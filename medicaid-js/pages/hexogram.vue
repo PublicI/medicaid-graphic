@@ -5,11 +5,6 @@
 
         <p class="subtitle">Nearly 300 doctors who decided which drugs were covered by state Medicaid programs from 2016-18 had received payments from Pharmaceutical companies</p>
 
-        <svg style="width:100%;height:60px">
-            <g class="legendLog" transform="translate(7,0)">
-            </g>
-        </svg>
-
     <div id="state-grid-map"></div>
 
     <div id="map-template" style="display: none;">
@@ -246,7 +241,7 @@ export default {
                 var legendWrapper = containerElement.select('.key-wrap');
                 var legendElement = containerElement.select('.key');
 
-                legendWrapper.classed('numeric-scale', true);
+                legendWrapper.classed('quantize-scale', true);
 
                 var colorScale = d3.scaleQuantize()
                     .domain([0, 1000, 5000, 10000, 50000])
@@ -501,11 +496,65 @@ export default {
     margin-left: 7px;
 }
 
-.legendLog .label {
-    font-family: tablet-gothic-n2,tablet-gothic,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 13px;
-    line-height: 16px;
-    fill: rgb(100,100,100);
+.key-wrap {
+    .key {
+        margin: 0 0 18px 0;
+        padding: 0;
+        list-style-type: none;
 
+        .key-item {
+            display: inline-block;
+            margin: 0 18px 0 0;
+            padding: 0;
+            line-height: 15px;
+        }
+        .key-item b {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 6px;
+            float: left;
+        }
+        .key-item label {
+            white-space: nowrap;
+            font-size: 12px;
+            color: #666;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+
+    &.quantize-scale {
+        width: 100%;
+        text-align: center;
+
+        h3 {
+            margin-bottom: 5px;
+        }
+
+        .key {
+            .key-item {
+                margin: 0 1px 0 0;
+                position: relative;
+            }
+
+            .key-item b {
+                width: 45px;
+                height: 10px;
+                margin-right: 0;
+            }
+
+            .key-item label {
+                position: absolute;
+                bottom: -20px;
+                left: -15%;
+
+                &.end-label {
+                    left: auto;
+                    right: -25%;
+                }
+            }
+        }
+    }
 }
 </style>
