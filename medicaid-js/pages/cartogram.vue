@@ -62,8 +62,8 @@ export default {
     },
     methods: {
         scale() {
-            return d3.scaleLog()
-                .domain([0.1, 1000, 5000, 10000, 50000])
+            return d3.scaleQuantize()
+                .domain([0, 1000, 5000, 10000, 50000])
                 .range(['#A8A8A8', '#7DBFE6', '#51AADE', '#3D7FA6', '#28556F']);
         }
     },
