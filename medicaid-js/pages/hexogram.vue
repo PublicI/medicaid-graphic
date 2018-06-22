@@ -282,14 +282,14 @@ export default {
                         });
             }
 
-            render(); 
+            render();
 
         });
     }
 };
 </script>
 
-<style>
+<style lang="less">
 
 .source {
     font-size: 14px;
