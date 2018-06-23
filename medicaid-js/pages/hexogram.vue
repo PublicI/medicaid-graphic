@@ -1,14 +1,11 @@
 <template>
     <div class="statebinContainer">
 
-        <p class="title">How pharmaceutical companies influence Medicaid drug access</p>
-
-        <p class="subtitle">Nearly 300 doctors who decided which drugs were covered by state Medicaid programs from 2016-18 had received payments from Pharmaceutical companies</p>
-
     <div id="state-grid-map"></div>
 
     <div id="map-template" style="display: none;">
         <div class="key-wrap">
+            <div class="legend"><b>Pharma payments to doctors, 2013-2016</b></div>
             <ul class="key"></ul>
         </div>
 
@@ -130,12 +127,12 @@ export default {
 
         // D3 scale for translating cash value into color
         var scale = d3.scaleLinear()
-            .domain([0, 500, 1000, 5000, 10000, 350000])
+            .domain([0, 1000, 5000, 10000, 50000, 100000])
             .range([COLORS['blue6'], COLORS['blue5'], COLORS['blue4'], COLORS['blue3'], COLORS['blue2'], COLORS['blue1']]);
         
         var MAP_TEMPLATE_ID = '#map-template';
         var isMobile = false;
-        var LABELS = {legend_labels: scale.domain(), max_label: 5000};
+        var LABELS = {legend_labels: scale.domain(), max_label: 350000};
         var DEFAULT_WIDTH = 400;
         var MOBILE_THRESHOLD = 500;
 
@@ -205,22 +202,34 @@ export default {
 
                 legendWrapper.classed('linear-scale', true);
 
+                // Append legend widths for all vars            
+                var tempKey = 0;
+
                 _.each(scale.domain(), function(key, i) {
+
                     var keyItem = legendElement.append('li')
                         .classed('key-item', true)
 
                     keyItem.append('b')
-                        .style('background', scale(key));
+                        .style('background', scale(key))
+            //            .style('width', Math.pow(key - tempKey, 1/3) + 20 + 'px');
 
+                    tempKey = key;
+
+                    if (key === 0) {
+                        keyItem.append('label')
+                            .text('$' + key) 
+                    } else {
                     keyItem.append('label')
-                        .text(key);
+                        .text('$' + intcomma(key/1000) + 'k')
+                    }
 
-                    // Add the optional upper bound label on numeric scale
-                    if (config['isNumeric'] && i == categories.length - 1) {
+                    // Add the upper bound label on numeric scale
+                    if (config['isNumeric'] && i == scale.domain().length - 1) {
                         if (LABELS['max_label'] && LABELS['max_label'] !== '') {
                             keyItem.append('label')
                                 .attr('class', 'end-label')
-                                .text(LABELS['max_label']);
+                                .text('$' + intcomma(LABELS['max_label']/1000) + 'k');
                         }
                     }
                 });
@@ -243,8 +252,17 @@ export default {
                         var categoryClass = 'category-' + classify(state[valueColumn]);
 
                         chartElement.select('.' + stateClass)
-                            .attr('class', stateClass + ' state-active ' + categoryClass)
-                            .attr('fill', scale(state[valueColumn]));
+                            .attr('class', stateClass + ' state-active ' + categoryClass);
+                        if (state['state_name'] === 'DC') {
+                             chartElement.select('.' + stateClass)
+                                .attr('fill', '#9b9b9b');
+                        } else if (state[valueColumn] > 100000) {
+                            chartElement.select('.' + stateClass)
+                                .attr('fill', COLORS['blue1']);
+                        } else {
+                            chartElement.select('.' + stateClass)
+                                .attr('fill', scale(state[valueColumn]));
+                        }
                     }
                 });
 
@@ -272,7 +290,7 @@ export default {
                             var className = '.state-' + classify(d['state_name']);
                             var tileBox = chartElement.select(className).node().getBBox();
                             var textBox = d3.select(this).node().getBBox();
-                            var textOffset = textBox['height'] / 2.1;
+                            var textOffset = textBox['height'] / 2.5;
 
                             if (isMobile) {
                                 textOffset -= 1;
@@ -295,7 +313,7 @@ export default {
     font-size: 14px;
     line-height: 16px;
     color: #666;
-    margin-bottom: 15px;
+    margin-top: 15px;
     margin-left: 7px;
 }
 
@@ -326,7 +344,7 @@ export default {
 
 .key-wrap {
     .key {
-        margin: 0 0 18px 0;
+        margin: 0 0 23px 0;
         padding: 0;
         list-style-type: none;
 
@@ -345,18 +363,20 @@ export default {
         }
         .key-item label {
             white-space: nowrap;
+            font-size: 12px;
             font-weight: normal;
             -webkit-font-smoothing: antialiased;
         }
     }
 
     &.linear-scale {
-        width: 100%;
+        transform-origin: 50% 50%;
         text-align: center;
-        font-size: 13px;
+        font-size: 12px;
+        width: 400px;
 
         h3 {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .key {
@@ -367,7 +387,7 @@ export default {
             }
 
             .key-item b {
-                width: 45px;
+                width: 50px;
                 height: 10px;
                 margin-right: 0;
 
@@ -376,7 +396,7 @@ export default {
             .key-item label {
                 position: absolute;
                 bottom: -20px;
-                left: -15%;
+                right: 75%;
 
                 &.end-label {
                     left: auto;
@@ -388,32 +408,38 @@ export default {
     }
 }
 
-.tile-grid-map {
-    margin-bottom: 33px;
+.legend {
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .state {
     fill: #eee;
 }
 
+.source {
+    margin-top: 30px;
+}
+
 .label {
-    font-size: 10px;
     fill: #979797;
+    font-size: 16px;
 }
 
 .label-active {
     fill: #fff;
+    font-size: 13px;
 }
 
 @media screen and (max-width: 500px){
     .label {
-        font-size: 10px;
+        font-size: 13px;
     }
 }
 
 @media screen and (min-width: 500px){
     .label {
-        font-size: 11px;
+        font-size: 13px;
     }
 }
 
