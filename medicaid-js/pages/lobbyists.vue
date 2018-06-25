@@ -43,6 +43,9 @@ export default {
                     text: null
                 },
                 labels: {
+                    reserveSpace: true,
+                    allowOverlap: true,
+                    step: 1,
                     style: {
                         fontSize: '11px',
                         color: '#383838',
@@ -154,18 +157,22 @@ export default {
 </script>
 
 <style scoped>
+
 #chart {
     height: 800px;
     margin: 0 auto;
     padding-bottom: 15px;
 }
+
 .title {
 
 }
+
 .source {
     line-height:120%;
     font-size:70%;
     color:#666;
     padding-left: 40px;
 }
+
 </style>

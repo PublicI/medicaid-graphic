@@ -19,7 +19,7 @@
 
         var pymParents = [];
 
-        for (var i = 0; i <= 2; i++) {
+        for (var i = 0; i <= 3; i++) {
             var el = document.getElementById('medicaid-graphic' + (i === 0 ? '' : i));
 
             if (typeof el !== 'undefined' && el) {
