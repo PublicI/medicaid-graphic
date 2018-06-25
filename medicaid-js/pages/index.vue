@@ -2,7 +2,7 @@
     <div>
         <div id="chart"></div>
         
-        <p class="source">Source: Center for Public Integrity analysis of Medicaid Budget and Expenditure Report and State Expenditure Report data. Graphic by Julia Donheiser.</p>
+        <p class="source">Source: Center for Public Integrity analysis of data collected by the National Association of State Budget Officers. Graphic by Julia Donheiser.</p>
     </div>
 </template>
 
