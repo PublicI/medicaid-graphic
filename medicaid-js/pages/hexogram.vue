@@ -411,6 +411,7 @@ export default {
 .legend {
     font-size: 16px;
     margin-bottom: 5px;
+    color: #666;
 }
 
 .state {
@@ -423,7 +424,7 @@ export default {
 
 .label {
     fill: #979797;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .label-active {
@@ -433,13 +434,13 @@ export default {
 
 @media screen and (max-width: 500px){
     .label {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
 @media screen and (min-width: 500px){
     .label {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
