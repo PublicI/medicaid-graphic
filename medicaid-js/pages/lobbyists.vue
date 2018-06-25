@@ -54,7 +54,7 @@ export default {
             },
             yAxis: {
                 min: 0,
-                max: 2.2,
+                max: 1.005,
                 gridLineWidth: 0,
                 title: {
                     text: null
@@ -74,20 +74,7 @@ export default {
                                 color: '#737373',
                                 fontSize: '13px'
                             }
-                        }                        
-                    },
-                    {
-                        value: 2,
-                        width: 1,
-                        color: '#bebebe',
-                        label: {
-                            y: 40,
-                            text: '2 lobbyists per legislator',
-                            style: {
-                                color: '#737373',
-                                fontSize: '13px'
-                            }
-                        }                        
+                        }                                       
                     } /*,
                     {
                         value: 3,
