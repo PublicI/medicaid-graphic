@@ -70,7 +70,7 @@
             </svg>
         </div>
 
-        <p class="source">Source: Open Payments and NPPES.</p>
+        <p class="source">Source: Center for Public Integrity analysis of state records, Centers for Medicare &amp; Medicaid Services data.</p>
     </div>
 </template>
 
@@ -310,8 +310,8 @@ export default {
 <style lang="less">
 
 .source {
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 70%;
+    line-height: 120%;
     color: #666;
     margin-top: 15px;
     margin-left: 7px;
