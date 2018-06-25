@@ -2,7 +2,7 @@
     <div>
         <div id="chart"></div>
         
-        <p class="source">Source: Center for Public Integrity analysis of data collected by the National Association of State Budget Officers. Graphic by Julia Donheiser.</p>
+        <p class="source">Source: Center for Public Integrity analysis of data collected by the <a href="https://www.nasbo.org/reports-data/state-expenditure-report" target="_top">National Association of State Budget Officers</a>. Graphic by Julia Donheiser.</p>
     </div>
 </template>
 

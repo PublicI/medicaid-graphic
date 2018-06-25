@@ -2,7 +2,7 @@
     <div>
         <div id="chart"></div>
         
-        <p class="source">Source: Center for Public Integrity analysis of Medicaid Budget and Expenditure Report, State Expenditure Report and State Drug Utilization data. Graphic by Julia Donheiser.</p>
+        <p class="source">Source: Center for Public Integrity Analysis of <a href="https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html" target="_top">Medicaid state drug utilization</a> data and <a href="https://www.medicaid.gov/medicaid/finance/state-expenditure-reporting/expenditure-reports/index.html" target="_top">Medicaid Budget and Expenditure System</a> data. Graphic by Julia Donheiser.</p>
     </div>
 </template>
 

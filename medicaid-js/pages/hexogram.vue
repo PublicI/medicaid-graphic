@@ -70,7 +70,7 @@
             </svg>
         </div>
 
-        <p class="source">Source: Center for Public Integrity analysis of state records, Centers for Medicare &amp; Medicaid Services data.</p>
+        <p class="source">Source: Center for Public Integrity analysis of state records and Centers for Medicare and Medicaid Service <a href="https://www.cms.gov/openpayments/" target="_top">Open Payments</a> data. Graphic by Julia Donheiser.</p>
     </div>
 </template>
 
