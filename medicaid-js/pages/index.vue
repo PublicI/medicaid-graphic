@@ -45,7 +45,7 @@ export default {
             chart: {
                 marginLeft: 50
             },
-            colors: ['#51AADE'],
+            colors: ['#17807E'],
             credits: {
                 enabled: false
             },

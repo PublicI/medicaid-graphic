@@ -54,7 +54,7 @@ export default {
                     }
                 }
             },
-            colors: ['#51AADE'],
+            colors: ['#17807E'],
             credits: {
                 enabled: false
             },
