@@ -51,7 +51,7 @@ export default {
             },
             yAxis: {
                 min: 0,
-                max: 3,
+                max: 2.2,
                 gridLineWidth: 0,
                 title: {
                     text: null
@@ -126,7 +126,12 @@ export default {
                 series: {
                     pointWidth: 10,
                     pointPadding: 20,
-                    color: '#17807E'
+                    color: '#17807E',
+                    states: {
+                        hover: {
+                            enabled: false
+                        }
+                    }
                 }
             },
             series: this.makeSeries(data)

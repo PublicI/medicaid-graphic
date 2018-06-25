@@ -51,6 +51,11 @@ export default {
                     marker: {
                         radius: 3,
                         lineWidth: 1
+                    },
+                    states: {
+                        hover: {
+                            enabled: false
+                        }
                     }
                 }
             },
