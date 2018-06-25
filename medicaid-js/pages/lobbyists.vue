@@ -65,7 +65,7 @@ export default {
                         width: 1,
                         color: '#bebebe',
                         label: {
-                            y: 110,
+                            y: 80,
                             text: '1 lobbyist per legislator',
                             style: {
                                 color: '#737373',
@@ -78,7 +78,7 @@ export default {
                         width: 1,
                         color: '#bebebe',
                         label: {
-                            y: 60,
+                            y: 40,
                             text: '2 lobbyists per legislator',
                             style: {
                                 color: '#737373',
