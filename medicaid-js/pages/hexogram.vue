@@ -344,7 +344,7 @@ export default {
 
 .key-wrap {
     .key {
-        margin: 0 0 23px 0;
+        margin: 0 0 10px 0;
         padding: 0;
         list-style-type: none;
 
