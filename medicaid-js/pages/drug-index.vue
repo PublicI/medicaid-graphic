@@ -22,11 +22,11 @@ export default {
         makeSeries(mydata) {
             const tar = [];
             let seriesI = {};
-            seriesI.name = "Total Spending";
+            seriesI.name = "Total spending";
             seriesI.data = mydata.data[1];
             seriesI.pointStart = Date.UTC(2008,0,1); 
             seriesI.pointIntervalUnit = 'year'
-            seriesI.marker = { symbol: 'circle', radius: 2 };
+            seriesI.marker = { symbol: 'circle' }; // , radius: 2
             tar.push(seriesI);
             return tar;
         }
@@ -42,7 +42,19 @@ export default {
             }
         });
         Highcharts.chart('chart', {
-            colors: ['#51AADE'],
+            chart: {
+                marginLeft: 50
+            },
+            plotOptions: {
+                series: {
+                    lineWidth: 3,
+                    marker: {
+                        radius: 3,
+                        lineWidth: 1
+                    }
+                }
+            },
+            colors: ['#17807E'],
             credits: {
                 enabled: false
             },
@@ -53,7 +65,7 @@ export default {
                 plotLines: [
                     {
                         value: Date.UTC(2014),
-                        width: 1.5,
+                        width: 1,
                         color: '#bebebe',
                         zIndex: 3,
                         label: {
@@ -68,7 +80,8 @@ export default {
                 ],
                 labels: {
                     style: {
-                        fontSize: '11px'
+                        fontSize: '12px',
+                        color: '#888'
                     }
                 },
                 type: 'datetime'
@@ -78,6 +91,10 @@ export default {
                     text: ''
                 },
                 labels: {
+                    style: {
+                        fontSize: '12px',
+                        color: '#888'
+                    },
                     formatter() {
                         return `$${Highcharts.numberFormat(this.value, 0)}T`;
                     }
@@ -91,7 +108,8 @@ export default {
             },
             tooltip: {
                 pointFormat: '{series.name}:<b>${point.y:.1f} trillion</b>',
-                crosshairs: false
+                crosshairs: false,
+                enabled: false
             },
             legend: {
                 enabled: false,
@@ -103,15 +121,19 @@ export default {
             title: {
                 text: '<b>... which means drug payouts are increasing, too</b>',
                 align: 'left',
-                margin: 20,
-                x: 50
+                // margin: 20,
+                x: 40,
+                style: {
+                    color: '#666'
+                }
             },
             subtitle: {
                 text: 'Total state and federal Medicaid drug spending in trillions of dollars',
                 align: 'left',
-                x: 50,
+                x: 40,
                 style: {
-                    fontSize: '15px'
+                    fontSize: '15px',
+                    color: '#666'
                 }
             },
             style: {
@@ -131,7 +153,8 @@ export default {
 }
 .source {
     line-height:120%;
-    font-size:80%;
+    font-size:70%;
     color:#666;
+    padding-left: 40px;
 }
 </style>

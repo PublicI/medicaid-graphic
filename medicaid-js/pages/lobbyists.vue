@@ -62,27 +62,27 @@ export default {
                 plotLines: [
                     {
                         value: 1,
-                        width: 1.5,
+                        width: 1,
                         color: '#bebebe',
                         label: {
                             y: 110,
                             text: '1 lobbyist per legislator',
                             style: {
                                 color: '#737373',
-                                fontSize: '14px'
+                                fontSize: '13px'
                             }
                         }                        
                     },
                     {
                         value: 2,
-                        width: 1.5,
+                        width: 1,
                         color: '#bebebe',
                         label: {
                             y: 60,
                             text: '2 lobbyists per legislator',
                             style: {
                                 color: '#737373',
-                                fontSize: '14px'
+                                fontSize: '13px'
                             }
                         }                        
                     } /*,
@@ -114,8 +114,10 @@ export default {
                 text: '<b>Registered pharma lobbyists per state legislator</b>',
                 align: 'left',
                 style: {
-                    fontSize: '20px'
-                }
+                    // fontSize: '20px',
+                    color: '#666'
+                },
+                x: 40
             },
             style: {
                 fontFamily: 'tablet-gothic-narrow'
@@ -157,7 +159,8 @@ export default {
 }
 .source {
     line-height:120%;
-    font-size:80%;
+    font-size:70%;
     color:#666;
+    padding-left: 40px;
 }
 </style>
