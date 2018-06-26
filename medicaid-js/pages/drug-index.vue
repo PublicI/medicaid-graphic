@@ -70,7 +70,7 @@ export default {
                 gridLineWidth: .5,
                 endOnTick: true,
                 max: Date.UTC(2016,0,1),
-                plotLines: [
+            /*    plotLines: [
                     {
                         value: Date.UTC(2014),
                         width: 1,
@@ -84,16 +84,16 @@ export default {
                                 color: '#737373'
                             }
                         }                        
-                    }                    
+                    }                     
                 ],
                 labels: {
                     style: {
                         fontSize: '12px',
                         color: '#888'
                     }
-                },
+                }, */
                 type: 'datetime'
-            },
+            }, 
             yAxis: {
                 title: {
                     text: ''

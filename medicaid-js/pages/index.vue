@@ -67,7 +67,7 @@ export default {
                 gridLineWidth: .5,
                 max: Date.UTC(2016,0,1),
                 endOnTick: true,
-                plotLines: [
+        /*        plotLines: [
                     {
                         value: Date.UTC(2014),
                         width: 1,
@@ -82,7 +82,7 @@ export default {
                             }
                         }                        
                     }                    
-                ],
+                ], */
                 labels: {
                     style: {
                         fontSize: '12px',
@@ -133,7 +133,7 @@ export default {
                 }
             },
             subtitle: {
-                text: 'Percentage of total state and federal spending that went towards Medicaid',
+                text: 'Percentage of total state spending on Medicaid, including federal assistance',
                 align: 'left',
                 x: 40,
                 style: {

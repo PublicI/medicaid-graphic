@@ -2,7 +2,7 @@
     <div>
         <div id="chart"></div>
         
-        <p class="source">Source: The National Institute on Money in Politics and the National Conference of State Legislatures. Graphic by Julia Donheiser.</p>
+        <p class="source">Source: Center for Public Integrity analysis of 2017 data from the <a href="https://www.followthemoney.org/" target="_top">National Institute on Money in Politics</a> and the <a href="http://www.ncsl.org/" target="_top">National Conference of State Legislatures</a>. Graphic by Julia Donheiser.</p>
     </div>
 </template>
 
@@ -114,7 +114,7 @@ export default {
                 enabled: false
             },
             title: {
-                text: '<b>Registered Pharma lobbyists by state, 2017</b>',
+                text: '<b>Registered Pharma lobbyists by state</b>',
                 align: 'left',
                 style: {
                     // fontSize: '20px',
