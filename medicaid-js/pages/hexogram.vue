@@ -5,7 +5,7 @@
 
     <div id="map-template" style="display: none;">
         <div class="key-wrap">
-            <div class="legend"><b>Pharma payments to doctors, 2013-2016</b></div>
+            <div class="legend"><b>Pharma payments to doctors on Medicaid drug boards</b></div>
             <ul class="key"></ul>
         </div>
 
@@ -70,7 +70,7 @@
             </svg>
         </div>
 
-        <p class="source">Source: Center for Public Integrity analysis of state records and Centers for Medicare and Medicaid Service <a href="https://www.cms.gov/openpayments/" target="_top">Open Payments</a> data. Graphic by Julia Donheiser.</p>
+        <p class="source">Center for Public Integrity analysis of 2016-18 state records and Centers for Medicare and Medicaid Service 2013-16 <a href="https://www.cms.gov/openpayments/" target="_top">Open Payments</a> data. Graphic by Julia Donheiser.</p>
     </div>
 </template>
 

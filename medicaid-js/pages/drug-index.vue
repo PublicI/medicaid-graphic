@@ -104,7 +104,7 @@ export default {
                         color: '#888'
                     },
                     formatter() {
-                        return `$${Highcharts.numberFormat(this.value, 0)}T`;
+                        return `$${Highcharts.numberFormat(this.value, 0)}`;
                     }
                 },
                 plotLines: [
@@ -127,7 +127,7 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>... which means drug payouts are increasing, too</b>',
+                text: '<b>Drug costs are on the rise...</b>',
                 align: 'left',
                 // margin: 20,
                 x: 40,
@@ -136,7 +136,7 @@ export default {
                 }
             },
             subtitle: {
-                text: 'Total state and federal Medicaid drug spending in trillions of dollars',
+                text: 'State and federal drug spending per Medicaid enrollee',
                 align: 'left',
                 x: 40,
                 style: {

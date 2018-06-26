@@ -65,7 +65,7 @@ export default {
             },
             xAxis: {
                 gridLineWidth: .5,
-                max: Date.UTC(2017,0,1),
+                max: Date.UTC(2016,0,1),
                 endOnTick: true,
                 plotLines: [
                     {
@@ -124,7 +124,7 @@ export default {
             },
             series: dSeries,
             title: {
-                text: '<b>Medicaid spending is on the rise...</b>',
+                text: '<b>... and Medicaid spending is increasing</b>',
                 align: 'left',
                 x: 40,
                 // margin: 20,

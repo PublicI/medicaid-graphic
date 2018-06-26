@@ -54,7 +54,7 @@ export default {
             },
             yAxis: {
                 min: 0,
-                max: 1.005,
+                max: 200,
                 gridLineWidth: 0,
                 title: {
                     text: null
@@ -64,31 +64,44 @@ export default {
                 },
                 plotLines: [
                     {
-                        value: 1,
+                        value: 50,
                         width: 1,
                         color: '#bebebe',
                         label: {
-                            y: 80,
-                            text: '1 lobbyist per legislator',
+                            y: 230,
+                            text: '50 lobbyists',
                             style: {
                                 color: '#737373',
                                 fontSize: '13px'
                             }
                         }                                       
-                    } /*,
+                    },
                     {
-                        value: 3,
-                        width: 1.5,
+                        value: 100,
+                        width: 1,
                         color: '#bebebe',
                         label: {
-                            align: 'left',
-                            text: '3 lobbyists per legislator',
+                            y: 80,
+                            text: '100 lobbyists',
                             style: {
                                 color: '#737373',
                                 fontSize: '13px'
                             }
-                        }                        
-                    }   */                
+                        }                                       
+                    },
+                    {
+                        value: 150,
+                        width: 1,
+                        color: '#bebebe',
+                        label: {
+                            y: 20,
+                            text: '150 lobbyists',
+                            style: {
+                                color: '#737373',
+                                fontSize: '13px'
+                            }
+                        }                                       
+                    }               
                 ]
             },
             legend: {
@@ -101,7 +114,7 @@ export default {
                 enabled: false
             },
             title: {
-                text: '<b>Registered pharma lobbyists per state legislator</b>',
+                text: '<b>Registered Pharma lobbyists by state, 2017</b>',
                 align: 'left',
                 style: {
                     // fontSize: '20px',
