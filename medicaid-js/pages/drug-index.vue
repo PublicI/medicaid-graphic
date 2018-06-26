@@ -78,7 +78,7 @@ export default {
                         zIndex: 3,
                         label: {
                             text: 'Medicaid expansion',
-                            y: 110,
+                            y: 20,
                             style: {
                                 fontSize: '13px',
                                 color: '#737373'
