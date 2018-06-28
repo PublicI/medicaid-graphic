@@ -5,7 +5,7 @@
 
     <div id="map-template" style="display: none;">
         <div class="key-wrap">
-            <div class="legend"><b>Pharma payments to doctors on Medicaid drug boards</b></div>
+            <div class="legend"><b>Pharma payments to doctors on Medicaid drug boards, 2013-16</b></div>
             <ul class="key"></ul>
         </div>
 
