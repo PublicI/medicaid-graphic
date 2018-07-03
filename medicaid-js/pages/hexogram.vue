@@ -5,7 +5,7 @@
 
     <div id="map-template" style="display: none;">
         <div class="key-wrap">
-            <div class="legend"><b>Pharma payments to doctors on Medicaid drug boards, 2013-16</b></div>
+            <div class="legend"><b>Pharma payments to doctors on Medicaid drug boards<br>Aug. 2013 - Dec. 2017</b></div>
             <ul class="key"></ul>
         </div>
 
@@ -70,7 +70,7 @@
             </svg>
         </div>
 
-        <p class="source">Source: Center for Public Integrity analysis of 2016-18 state records and Centers for Medicare and Medicaid Services 2013-16 <a href="https://www.cms.gov/openpayments/" target="_top">Open Payments</a> data. Graphic by Julia Donheiser.</p>
+        <p class="source">Source: Center for Public Integrity analysis of 2016-18 state records and Centers for Medicare and Medicaid Services 2013-17 <a href="https://www.cms.gov/openpayments/" target="_top">Open Payments</a> data. Graphic by Julia Donheiser.</p>
     </div>
 </template>
 
@@ -86,6 +86,8 @@ import { legendColor } from 'd3-svg-legend';
 
 export default {
     mounted() {
+
+        var isMobile = false;
 
         var COLORS = {
                     nullGray: '#b2b0b0',
@@ -127,12 +129,12 @@ export default {
 
         // D3 scale for translating cash value into color
         var scale = d3.scaleLinear()
-            .domain([0, 1000, 5000, 10000, 50000, 100000])
+            .domain([0, 1000, 10000, 25000, 50000, 100000])
             .range([COLORS['blue6'], COLORS['blue5'], COLORS['blue4'], COLORS['blue3'], COLORS['blue2'], COLORS['blue1']]);
         
         var MAP_TEMPLATE_ID = '#map-template';
         var isMobile = false;
-        var LABELS = {legend_labels: scale.domain(), max_label: 350000};
+        var LABELS = {legend_labels: scale.domain(), max_label: 750000};
         var DEFAULT_WIDTH = 400;
         var MOBILE_THRESHOLD = 500;
 
@@ -174,7 +176,7 @@ export default {
              * Render a state grid map.
              */
             var renderStateGridMap = function(config) {
-                var valueColumn = 'payments';
+                var valueColumn = 'total_payments';
 
                 // Clear existing graphic (for redraw)
                 var containerElement = d3.select(config['container']);
@@ -315,6 +317,8 @@ export default {
     color: #666;
     margin-top: 15px;
     margin-left: 7px;
+    width: 400px;
+    word-wrap: break-word;
 }
 
 .title {
@@ -412,6 +416,7 @@ export default {
     font-size: 16px;
     margin-bottom: 5px;
     color: #666;
+    line-height: 28px;
 }
 
 .state {
