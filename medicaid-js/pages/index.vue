@@ -45,7 +45,7 @@ export default {
             chart: {
                 marginLeft: 50
             },
-            colors: ['#17807E'],
+            colors: ['#3D7FA6'],
             credits: {
                 enabled: false
             },
@@ -126,8 +126,6 @@ export default {
             title: {
                 text: '<b>... and Medicaid spending is increasing</b>',
                 align: 'left',
-                x: 40,
-                // margin: 20,
                 style: {
                     color: '#666'
                 }
@@ -135,7 +133,6 @@ export default {
             subtitle: {
                 text: 'Percentage of total state spending on Medicaid, including federal assistance',
                 align: 'left',
-                x: 40,
                 style: {
                     fontSize: '15px',
                     color: '#666'
@@ -160,6 +157,5 @@ export default {
     line-height:120%;
     font-size:70%;
     color:#666;
-    padding-left: 40px;
 }
 </style>

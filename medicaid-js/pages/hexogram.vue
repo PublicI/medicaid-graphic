@@ -54,7 +54,6 @@
                             <path d="M260.692194,150 L278.012702,160 L278.012702,180 L260.692194,190 L243.371686,180 L243.371686,160 L260.692194,150 Z" class="state-tennessee"></path>
                             <path d="M295.33321,150 L312.653718,160 L312.653718,180 L295.33321,190 L278.012702,180 L278.012702,160 L295.33321,150 Z" class="state-north-carolina"></path>
                             <path d="M329.974226,150 L347.294734,160 L347.294734,180 L329.974226,190 L312.653718,180 L312.653718,160 L329.974226,150 Z" class="state-south-carolina"></path>
-                         <!--   <path d="M364.615242,150 L381.93575,160 L381.93575,180 L364.615242,190 L347.294734,180 L347.294734,160 L364.615242,150 Z" class="state-district-of-columbia" style="display: none"></path> -->
                             <path d="M139.448637,180 L156.769145,190 L156.769145,210 L139.448637,220 L122.128129,210 L122.128129,190 L139.448637,180 Z" class="state-arizona"></path>
                             <path d="M174.089653,180 L191.410162,190 L191.410162,210 L174.089653,220 L156.769145,210 L156.769145,190 L174.089653,180 Z" class="state-oklahoma"></path>
                             <path d="M208.73067,180 L226.051178,190 L226.051178,210 L208.73067,220 L191.410162,210 L191.410162,190 L208.73067,180 Z" class="state-louisiana"></path>
@@ -280,7 +279,7 @@ export default {
                             var tileBox = chartElement.select(className).node().getBBox();
 
 
-                            return tileBox['x'] + tileBox['width'] * 0.5;
+                            return tileBox['x'] + tileBox['width'] * 0.52;
                         })
                         .attr('y', function(d) {
                             var className = '.state-' + classify(d['state_name']);
@@ -311,26 +310,16 @@ export default {
     color: #666;
     margin-top: 15px;
     margin-left: 7px;
-    width: 300px;
     word-wrap: break-word;
 }
-
-.legend {
-    font-size: 16px;
-    margin-bottom: 5px;
-    color: #666;
-    line-height: 28px;
-}
-
 
 .title {
     font-size: 16px;
     margin-bottom: 5px;
     color: #666;
     text-align: center;
-    width: 300px;
     word-wrap: break-word;
-    line-height: 25px;
+    line-height: 21px;
 }
 
 .key-wrap {
@@ -364,7 +353,6 @@ export default {
         transform-origin: 50% 50%;
         text-align: center;
         font-size: 12px;
-        width: 300px;
 
         h3 {
             margin-bottom: 10px;
@@ -421,7 +409,7 @@ export default {
 
 @media screen and (min-width: 500px){
     .label {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 

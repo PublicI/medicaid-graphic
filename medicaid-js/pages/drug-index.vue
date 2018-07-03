@@ -62,7 +62,7 @@ export default {
                     }
                 }
             },
-            colors: ['#17807E'],
+            colors: ['#3D7FA6'],
             credits: {
                 enabled: false
             },
@@ -110,7 +110,6 @@ export default {
             title: {
                 text: '<b>Drug costs are on the rise...</b>',
                 align: 'left',
-                x: 40,
                 style: {
                     color: '#666'
                 }
@@ -118,7 +117,6 @@ export default {
             subtitle: {
                 text: 'State and federal drug spending per Medicaid enrollee',
                 align: 'left',
-                x: 40,
                 style: {
                     fontSize: '15px',
                     color: '#666'
@@ -144,12 +142,10 @@ export default {
     font-size:70%;
     color:#666;
     margin-bottom: 10px;
-    padding-left: 40px;
 }
 .source {
     line-height:120%;
     font-size:70%;
     color:#666;
-    padding-left: 40px;
 }
 </style>
