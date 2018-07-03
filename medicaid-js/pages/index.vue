@@ -67,22 +67,6 @@ export default {
                 gridLineWidth: .5,
                 max: Date.UTC(2016,0,1),
                 endOnTick: true,
-        /*        plotLines: [
-                    {
-                        value: Date.UTC(2014),
-                        width: 1,
-                        color: '#bebebe',
-                        zIndex: 3,
-                        label: {
-                            text: 'Medicaid expansion',
-                            y: 100,
-                            style: {
-                                color: '#737373',
-                                fontSize: '13px'
-                            }
-                        }                        
-                    }                    
-                ], */
                 labels: {
                     style: {
                         fontSize: '12px',

@@ -78,7 +78,7 @@
 /* eslint-disable */
 
 import stats from '~/assets/doctor-payments.csv';
-import { intcomma, postal } from 'journalize';
+import { intcomma, postal, apstate } from 'journalize';
 import * as d3 from 'd3';
 import * as _ from 'lodash';
 import { legendColor } from 'd3-svg-legend';
@@ -155,7 +155,6 @@ export default {
                 } else {
                     isMobile = false;
                 }
-
                 var isNumeric = true;
 
                 renderStateGridMap({
@@ -269,7 +268,12 @@ export default {
                     .enter().append('text')
                         .attr('text-anchor', 'middle')
                         .text(function(d) {
-                            return d['state_name'];
+                            if (isMobile) {
+                                return d['state_name'];
+                            } else {
+                                return apstate(postal(d['state_name'],true));
+                            }
+                            
                         })
                         .attr('class', function(d) {
                             return d[valueColumn] !== null ? 'category-' + classify(d[valueColumn]) + ' label label-active' : 'label';
@@ -286,16 +290,19 @@ export default {
                             var tileBox = chartElement.select(className).node().getBBox();
                             var textBox = d3.select(this).node().getBBox();
                             var textOffset = textBox['height'] / 2.5;
-
+                            
                             if (isMobile) {
                                 textOffset -= 1;
                             }
-
+                            
                             return (tileBox['y'] + tileBox['height'] * 0.5) + textOffset;
                         });
             }
 
-            render();
+            render(window.innerWidth);
+            window.onresize = function() {
+                render(window.innerWidth);
+            };
 
         });
     }
@@ -310,6 +317,7 @@ export default {
     color: #666;
     margin-top: 15px;
     margin-left: 7px;
+    text-align: center;
     word-wrap: break-word;
 }
 
@@ -398,18 +406,18 @@ export default {
 
 .label-active {
     fill: #fff;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 @media screen and (max-width: 500px){
     .label {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
 @media screen and (min-width: 500px){
     .label {
-        font-size: 16px;
+        font-size: 13px;
     }
 }
 
