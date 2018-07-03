@@ -127,7 +127,7 @@ export default {
             plotOptions: {
                 series: {
                     pointWidth: 11,
-                    color: '#17807E',
+                    color: '#3D7FA6',
                     states: {
                         hover: {
                             enabled: false
