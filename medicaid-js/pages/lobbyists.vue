@@ -47,14 +47,14 @@ export default {
                     allowOverlap: true,
                     step: 1,
                     style: {
-                        fontSize: '11px',
+                        fontSize: '12.5px',
                         color: '#383838',
                     }
                 }
             },
             yAxis: {
                 min: 0,
-                max: 200,
+                max: 180,
                 gridLineWidth: 0,
                 title: {
                     text: null
@@ -120,15 +120,13 @@ export default {
                     // fontSize: '20px',
                     color: '#666'
                 },
-                x: 40
             },
             style: {
                 fontFamily: 'tablet-gothic-narrow'
             },
             plotOptions: {
                 series: {
-                    pointWidth: 10,
-                    pointPadding: 20,
+                    pointWidth: 11,
                     color: '#17807E',
                     states: {
                         hover: {
@@ -159,7 +157,7 @@ export default {
 <style scoped>
 
 #chart {
-    height: 800px;
+    height: 750px;
     margin: 0 auto;
     padding-bottom: 15px;
 }
@@ -172,7 +170,6 @@ export default {
     line-height:120%;
     font-size:70%;
     color:#666;
-    padding-left: 40px;
 }
 
 </style>
