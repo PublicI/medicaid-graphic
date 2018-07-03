@@ -5,7 +5,7 @@
 
     <div id="map-template" style="display: none;">
         <div class="key-wrap">
-            <div class="legend"><b>Pharma payments to doctors on Medicaid drug boards<br>Aug. 2013 - Dec. 2017</b></div>
+            <div class="title"><b>Pharma payments to doctors on Medicaid drug boards</b><br>Aug. 2013 - Dec. 2017</div>
             <ul class="key"></ul>
         </div>
 
@@ -87,8 +87,6 @@ import { legendColor } from 'd3-svg-legend';
 export default {
     mounted() {
 
-        var isMobile = false;
-
         var COLORS = {
                     nullGray: '#b2b0b0',
 
@@ -127,16 +125,15 @@ export default {
                     blue5: '#A8D5EF',
                     blue6: '#D3EAF7'};
 
-        // D3 scale for translating cash value into color
         var scale = d3.scaleLinear()
             .domain([0, 1000, 10000, 25000, 50000, 100000])
             .range([COLORS['blue6'], COLORS['blue5'], COLORS['blue4'], COLORS['blue3'], COLORS['blue2'], COLORS['blue1']]);
         
         var MAP_TEMPLATE_ID = '#map-template';
-        var isMobile = false;
         var LABELS = {legend_labels: scale.domain(), max_label: 750000};
-        var DEFAULT_WIDTH = 400;
+        var DEFAULT_WIDTH = 300;
         var MOBILE_THRESHOLD = 500;
+        var isMobile = false;
 
         this.$nextTick(() => {
 
@@ -162,12 +159,10 @@ export default {
 
                 var isNumeric = true;
 
-                // Render the map!
                 renderStateGridMap({
                     container: '#state-grid-map',
                     width: containerWidth,
                     data: stats,
-                    // isNumeric will style the legend as a numeric scale
                     isNumeric: isNumeric
                 });         
             }
@@ -214,7 +209,6 @@ export default {
 
                     keyItem.append('b')
                         .style('background', scale(key))
-            //            .style('width', Math.pow(key - tempKey, 1/3) + 20 + 'px');
 
                     tempKey = key;
 
@@ -317,33 +311,26 @@ export default {
     color: #666;
     margin-top: 15px;
     margin-left: 7px;
-    width: 400px;
+    width: 300px;
     word-wrap: break-word;
 }
+
+.legend {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #666;
+    line-height: 28px;
+}
+
 
 .title {
-    font-family: tablet-gothic-narrow,
-        sans-serif;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    width: 400px;
-    word-wrap: break-word;
-    padding-bottom: 0px;
-    border-bottom: 0px;
-    margin-bottom: 8px;
-}
-
-.subtitle {
-    font-family: tablet-gothic-narrow,
-        sans-serif;
-    font-size: 15px;
-    text-align: center;
-    line-height: 17px;
+    font-size: 16px;
+    margin-bottom: 5px;
     color: #666;
-    margin-bottom: 15px;
-    width: 400px;
+    text-align: center;
+    width: 300px;
     word-wrap: break-word;
+    line-height: 25px;
 }
 
 .key-wrap {
@@ -377,7 +364,7 @@ export default {
         transform-origin: 50% 50%;
         text-align: center;
         font-size: 12px;
-        width: 400px;
+        width: 300px;
 
         h3 {
             margin-bottom: 10px;
@@ -391,7 +378,7 @@ export default {
             }
 
             .key-item b {
-                width: 50px;
+                width: 40px;
                 height: 10px;
                 margin-right: 0;
 
@@ -412,19 +399,8 @@ export default {
     }
 }
 
-.legend {
-    font-size: 16px;
-    margin-bottom: 5px;
-    color: #666;
-    line-height: 28px;
-}
-
 .state {
     fill: #eee;
-}
-
-.source {
-    margin-top: 30px;
 }
 
 .label {
@@ -439,7 +415,7 @@ export default {
 
 @media screen and (max-width: 500px){
     .label {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 

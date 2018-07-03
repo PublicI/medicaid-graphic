@@ -29,7 +29,7 @@ export default {
             seriesI.data = mydata.data[1];
             seriesI.pointStart = Date.UTC(2008,0,1); 
             seriesI.pointIntervalUnit = 'year'
-            seriesI.marker = { symbol: 'circle' }; // , radius: 2
+            seriesI.marker = { symbol: 'circle' };
             tar.push(seriesI);
             return tar;
         }
@@ -66,32 +66,13 @@ export default {
             credits: {
                 enabled: false
             },
+            rangeSelector: {
+                enabled: true
+            },
             xAxis: {
                 gridLineWidth: .5,
                 endOnTick: true,
                 max: Date.UTC(2016,0,1),
-            /*    plotLines: [
-                    {
-                        value: Date.UTC(2014),
-                        width: 1,
-                        color: '#bebebe',
-                        zIndex: 3,
-                        label: {
-                            text: 'Medicaid expansion',
-                            y: 20,
-                            style: {
-                                fontSize: '13px',
-                                color: '#737373'
-                            }
-                        }                        
-                    }                     
-                ],
-                labels: {
-                    style: {
-                        fontSize: '12px',
-                        color: '#888'
-                    }
-                }, */
                 type: 'datetime'
             }, 
             yAxis: {
@@ -129,7 +110,6 @@ export default {
             title: {
                 text: '<b>Drug costs are on the rise...</b>',
                 align: 'left',
-                // margin: 20,
                 x: 40,
                 style: {
                     color: '#666'
