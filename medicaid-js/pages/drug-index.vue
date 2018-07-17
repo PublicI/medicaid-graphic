@@ -5,7 +5,7 @@
 
         <p class="note">Note: Spending for 2008 and 2009 is slightly understated because drug utilization data for Arizona's Medicaid program was not available.</p>
 
-        <p class="source">Source: Center for Public Integrity Analysis of <a href="https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html" target="_top">Medicaid state drug utilization</a> data and <a href="https://www.medicaid.gov/medicaid/finance/state-expenditure-reporting/expenditure-reports/index.html" target="_top">Medicaid Budget and Expenditure System</a> data. Graphic by Julia Donheiser.</p>
+        <p class="source">Source: Center for Public Integrity analysis of <a href="https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html" target="_top">Medicaid state drug utilization</a> data and <a href="https://www.medicaid.gov/medicaid/finance/state-expenditure-reporting/expenditure-reports/index.html" target="_top">Medicaid Budget and Expenditure System</a> data. Graphic by Julia Donheiser.</p>
     </div>
 </template>
 

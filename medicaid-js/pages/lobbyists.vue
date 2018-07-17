@@ -47,7 +47,7 @@ export default {
                     allowOverlap: true,
                     step: 1,
                     style: {
-                        fontSize: '12.5px',
+                        fontSize: '13px',
                         color: '#383838',
                     }
                 }
@@ -157,7 +157,7 @@ export default {
 <style scoped>
 
 #chart {
-    height: 750px;
+    height: 780px;
     margin: 0 auto;
     padding-bottom: 15px;
 }
