@@ -417,7 +417,7 @@ export default {
 
 @media screen and (min-width: 500px){
     .label {
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 
