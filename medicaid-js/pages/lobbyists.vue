@@ -114,7 +114,7 @@ export default {
                 enabled: false
             },
             title: {
-                text: '<b>Registered Pharma lobbyists by state</b>',
+                text: '<b>Registered drug industry lobbyists by state</b>',
                 align: 'left',
                 style: {
                     // fontSize: '20px',
