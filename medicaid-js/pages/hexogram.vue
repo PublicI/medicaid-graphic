@@ -69,7 +69,7 @@
             </svg>
         </div>
 
-        <p class="source">Source: Center for Public Integrity analysis of 2016-18 state records and Centers for Medicare and Medicaid Services 2013-17 <a href="https://www.cms.gov/openpayments/" target="_top">Open Payments</a> data. Graphic by Julia Donheiser.</p>
+        <p class="source">Source: Center for Public Integrity analysis of 2016-18 state records and Centers for Medicare and Medicaid Services 2013-17 <a href="https://www.cms.gov/openpayments/" target="_top">Open Payments</a> data. Graphic by Julia Donheiser. <a href="https://www.publicintegrity.org/2018/07/18/21953/how-we-investigated-drugmakers-influence-over-medicaid" target="_top">Methodology</a></p>
     </div>
 </template>
 
