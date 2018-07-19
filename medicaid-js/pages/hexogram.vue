@@ -75,6 +75,8 @@
 
 <script>
 
+// Code from https://github.com/nprapps/dailygraphics licensed MIT
+
 /* eslint-disable */
 
 import stats from '~/assets/doctor-payments.csv';
