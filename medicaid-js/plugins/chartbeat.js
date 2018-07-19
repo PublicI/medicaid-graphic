@@ -7,6 +7,10 @@ export default ({ app }) => {
         return;
     }
 
+    if (window.location.pathname !== '/medicaid-graphic/') {
+        return;
+    }
+
     //Chartbeat
     window._sf_async_config={};
     /** CONFIGURATION START **/
