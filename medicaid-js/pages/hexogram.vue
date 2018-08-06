@@ -126,9 +126,9 @@ export default {
                     blue5: '#A8D5EF',
                     blue6: '#D3EAF7'};
 
-        var scale = d3.scaleLinear()
+        var scale = d3.scaleThreshold()
             .domain([0, 1000, 10000, 25000, 50000, 100000])
-            .range([COLORS['blue6'], COLORS['blue5'], COLORS['blue4'], COLORS['blue3'], COLORS['blue2'], COLORS['blue1']]);
+            .range(['white', COLORS['blue6'], COLORS['blue5'], COLORS['blue4'], COLORS['blue3'], COLORS['blue2'], COLORS['blue1']]);
         
         var MAP_TEMPLATE_ID = '#map-template';
         var LABELS = {legend_labels: scale.domain(), max_label: 750000};
